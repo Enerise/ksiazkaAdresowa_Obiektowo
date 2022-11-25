@@ -27,6 +27,7 @@ public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
+    int wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
