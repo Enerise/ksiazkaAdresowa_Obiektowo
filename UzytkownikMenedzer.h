@@ -12,21 +12,22 @@
 
 using namespace std;
 
-class UzytkownikMenedzer{
+class UzytkownikMenedzer {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
     MetodyPomocnicze metodyPomocnicze;
 
-     Uzytkownik podajDaneNowegoUzytkownika();
+    Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-     PlikZUzytkownikami plikZUzytkownikami;
+    PlikZUzytkownikami plikZUzytkownikami;
 
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
 };

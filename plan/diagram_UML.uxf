@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10</x>
-      <y>110</y>
+      <x>50</x>
+      <y>140</y>
       <w>310</w>
       <h>360</h>
     </coordinates>
@@ -15,6 +15,8 @@
 --
 KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void
++ logowanieUzytkownika(): void
++ zmianaHaslaZalogowanegoUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
 
 
@@ -25,8 +27,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>110</y>
+      <x>870</x>
+      <y>140</y>
       <w>180</w>
       <h>250</h>
     </coordinates>
@@ -41,8 +43,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>110</y>
+      <x>370</x>
+      <y>140</y>
       <w>260</w>
       <h>360</h>
     </coordinates>
@@ -53,6 +55,7 @@ KsiazkaAdresowa()
 --
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): Integer
++ zmianaHaslaZalogowanegoUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
 + wczytajUzytkownikowZPliku(): void
 - podajDaneNowegoUzytkownika(): Uzytkownik
@@ -66,8 +69,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>110</y>
+      <x>640</x>
+      <y>140</y>
       <w>220</w>
       <h>360</h>
     </coordinates>
@@ -79,6 +82,7 @@ KsiazkaAdresowa()
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku(): void
 + wczytajUzytkownikowZPliku(): vector &lt;Uzytkownik&gt;
++ zapiszWszystkichUzytkownikowDoPliku(): void
 - czyPlikJestPusty(): Bool
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): String
 
@@ -88,14 +92,15 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>490</y>
+      <x>870</x>
+      <y>400</y>
       <w>210</w>
       <h>180</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
-+ konwerjsaIntNaString(): String</panel_attributes>
++ konwerjsaIntNaString(): String
++ wczytajLinie(): String</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
