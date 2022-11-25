@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>140</y>
+      <x>210</x>
+      <y>70</y>
       <w>310</w>
       <h>360</h>
     </coordinates>
@@ -16,6 +16,7 @@
 KsiazkaAdresowa()
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): void
++ wylogowanieUzytkownika(): void
 + zmianaHaslaZalogowanegoUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
 
@@ -27,8 +28,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>140</y>
+      <x>1030</x>
+      <y>70</y>
       <w>180</w>
       <h>250</h>
     </coordinates>
@@ -43,8 +44,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>140</y>
+      <x>530</x>
+      <y>70</y>
       <w>260</w>
       <h>360</h>
     </coordinates>
@@ -55,6 +56,7 @@ KsiazkaAdresowa()
 --
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): Integer
++ wylogowanieUzytkowanika(): Integer
 + zmianaHaslaZalogowanegoUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
 + wczytajUzytkownikowZPliku(): void
@@ -69,15 +71,14 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>140</y>
+      <x>800</x>
+      <y>70</y>
       <w>220</w>
       <h>360</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
 - nazwaPlikuZUzytkownikami: String
-- fstream: plikTesktowy
 --
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku(): void
@@ -92,8 +93,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>400</y>
+      <x>1030</x>
+      <y>330</y>
       <w>210</w>
       <h>180</h>
     </coordinates>
@@ -101,6 +102,55 @@ KsiazkaAdresowa()
 --
 + konwerjsaIntNaString(): String
 + wczytajLinie(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>460</y>
+      <w>310</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>AdresatMenedzer
+--
+- idZalogowanegoUzytkownika: Integer
+- adresaci: vector &lt;Adresat&gt;
+- idOstatniegoAdresata: Integer
+--
++ dodajAdresata: Integer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>460</y>
+      <w>260</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+- id: Integer
+- idUzytkownika: Integer
+- imie: String
+- nazwisko: String
+- numerTelefonu: String
+- email: String
+- adres: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>800</x>
+      <y>460</y>
+      <w>220</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+--
+- nazwaPlikuZAdresatami: String</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -34,6 +34,13 @@ int UzytkownikMenedzer::logowanieUzytkownika(){
     return 0;
 }
 
+int UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    cout << "Zostales pomyslnie wylogowany";
+    return idZalogowanegoUzytkownika;
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika(){
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
