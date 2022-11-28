@@ -22,6 +22,8 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
 
+    void dodajAdresata();
+
 };
 
 #endif

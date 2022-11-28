@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>70</y>
+      <x>120</x>
+      <y>10</y>
       <w>310</w>
       <h>360</h>
     </coordinates>
@@ -19,6 +19,7 @@ KsiazkaAdresowa()
 + wylogowanieUzytkownika(): void
 + zmianaHaslaZalogowanegoUzytkownika(): void
 + wypiszWszystkichUzytkownikow(): void
++ dodajAdresata(): void
 
 
 
@@ -28,8 +29,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1030</x>
-      <y>70</y>
+      <x>940</x>
+      <y>10</y>
       <w>180</w>
       <h>250</h>
     </coordinates>
@@ -44,8 +45,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>70</y>
+      <x>440</x>
+      <y>10</y>
       <w>260</w>
       <h>360</h>
     </coordinates>
@@ -71,8 +72,8 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>70</y>
+      <x>710</x>
+      <y>10</y>
       <w>220</w>
       <h>360</h>
     </coordinates>
@@ -93,22 +94,25 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1030</x>
-      <y>330</y>
+      <x>1060</x>
+      <y>270</y>
       <w>210</w>
       <h>180</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
 + konwerjsaIntNaString(): String
-+ wczytajLinie(): String</panel_attributes>
++ wczytajLinie(): String
++ pobierzLiczbe(): String
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String
++ czyPlikJestPusty(): bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>460</y>
+      <x>120</x>
+      <y>400</y>
       <w>310</w>
       <h>300</h>
     </coordinates>
@@ -118,14 +122,15 @@ KsiazkaAdresowa()
 - adresaci: vector &lt;Adresat&gt;
 - idOstatniegoAdresata: Integer
 --
-+ dodajAdresata: Integer</panel_attributes>
+- podajDaneNowegoAdresata(): Adresat
++ dodajAdresata(): Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>460</y>
+      <x>440</x>
+      <y>400</y>
       <w>260</w>
       <h>300</h>
     </coordinates>
@@ -143,14 +148,24 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>460</y>
-      <w>220</w>
+      <x>710</x>
+      <y>400</y>
+      <w>350</w>
       <h>300</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
-- nazwaPlikuZAdresatami: String</panel_attributes>
+- nazwaPlikuZAdresatami: String
+--
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): Integer
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): Integer
+- pobierzDaneAdresata(): Adresat
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(): String
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): vector &lt;Adresat&gt;
++ dopiszAdresataDoPliku(): void
+
+
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

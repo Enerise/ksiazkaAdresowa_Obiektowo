@@ -3,13 +3,19 @@
 
 #include <iostream>
 #include <sstream>
+#include <fstream>
+#include <algorithm>
 
 using namespace std;
 
 class MetodyPomocnicze{
 public:
-     static string konwerjsaIntNaString(int liczba);
-     static string wczytajLinie();
+     string konwerjsaIntNaString(int liczba);
+     string wczytajLinie();
+     string pobierzLiczbe(string tekst, int pozycjaZnaku);
+     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+     bool czyPlikJestPusty(fstream &plikTekstowy);
+     int konwersjaStringNaInt(string liczba);
 };
 
 #endif
