@@ -14,7 +14,6 @@ using namespace std;
 class PlikZUzytkownikami{
     const string nazwaPlikuZUzytkownikami;
     vector <Uzytkownik> uzytkownicy;
-    bool czyPlikJestPusty();
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
     MetodyPomocnicze metodyPomocnicze;

@@ -1,45 +1,42 @@
 #include "UzytkownikMenedzer.h"
 #include "PlikZUzytkownikami.h"
 
-UzytkownikMenedzer::UzytkownikMenedzer(int noweIdZalogowanegoUzytkownika)
-{
-    ustawIdZalogowanegoUzytkownika(noweIdZalogowanegoUzytkownika);
-}
 
 void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)
 {
     noweIdZalogowanegoUzytkownika = 0;
 }
 
-int UzytkownikMenedzer::logowanieUzytkownika(){
+void UzytkownikMenedzer::logowanieUzytkownika(){
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    login = metodyPomocnicze.wczytajLinie();
+    cin >> login; //= metodyPomocnicze.wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end()){
         if (itr -> pobierzLogin() == login){
             for (int iloscProb = 3; iloscProb > 0; iloscProb--){
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                haslo = metodyPomocnicze.wczytajLinie();
+                cin >> haslo; //= metodyPomocnicze.wczytajLinie();
 
                 if (itr -> pobierzHaslo() == haslo){
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return idZalogowanegoUzytkownika = itr -> pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
 int UzytkownikMenedzer::wylogowanieUzytkownika()
@@ -90,7 +87,9 @@ int UzytkownikMenedzer::pobierzIdNowegoUzytkownika()
 
 bool UzytkownikMenedzer::czyIstniejeLogin(string login)
 {
-    for(int i = 0; i < uzytkownicy.size(); i++)
+   int dlugoscWektoraUzytkownicy = uzytkownicy.size();
+
+    for(int i = 0; i < dlugoscWektoraUzytkownicy; i++)
     {
         if(uzytkownicy[i].pobierzLogin() == login)
         {
@@ -105,7 +104,7 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    noweHaslo = metodyPomocnicze.wczytajLinie();
+    cin >> noweHaslo; // = metodyPomocnicze.wczytajLinie();
 
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
@@ -121,7 +120,8 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 
 void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
 {
-    for(int i = 0; i < uzytkownicy.size(); i++)
+    int dlugoscWektoraUzytkownicy = uzytkownicy.size();
+    for(int i = 0; i < dlugoscWektoraUzytkownicy; i++)
     {
         cout << uzytkownicy[i].pobierzId() << endl;
         cout << uzytkownicy[i].pobierzLogin() << endl;
@@ -131,6 +131,7 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
 
 void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 {
+    uzytkownicy.clear();
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 

@@ -11,7 +11,7 @@ using namespace std;
 class MetodyPomocnicze{
 public:
      string konwerjsaIntNaString(int liczba);
-     string wczytajLinie();
+     static string wczytajLinie();
      string pobierzLiczbe(string tekst, int pozycjaZnaku);
      string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
      bool czyPlikJestPusty(fstream &plikTekstowy);
