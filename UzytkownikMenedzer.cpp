@@ -1,25 +1,19 @@
 #include "UzytkownikMenedzer.h"
 #include "PlikZUzytkownikami.h"
 
-
-void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)
-{
-    noweIdZalogowanegoUzytkownika = 0;
-}
-
 void UzytkownikMenedzer::logowanieUzytkownika(){
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    cin >> login; //= metodyPomocnicze.wczytajLinie();
+    login = MetodyPomocnicze::wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end()){
         if (itr -> pobierzLogin() == login){
             for (int iloscProb = 3; iloscProb > 0; iloscProb--){
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                cin >> haslo; //= metodyPomocnicze.wczytajLinie();
+                haslo = MetodyPomocnicze::wczytajLinie();
 
                 if (itr -> pobierzHaslo() == haslo){
                     cout << endl << "Zalogowales sie." << endl << endl;
@@ -43,6 +37,7 @@ int UzytkownikMenedzer::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
     cout << "Zostales pomyslnie wylogowany";
+    system("pause");
     return idZalogowanegoUzytkownika;
 }
 
@@ -104,7 +99,7 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    cin >> noweHaslo; // = metodyPomocnicze.wczytajLinie();
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
 
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
@@ -129,12 +124,13 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy.clear();
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika() {
     return idZalogowanegoUzytkownika;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
+    if(idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
 }

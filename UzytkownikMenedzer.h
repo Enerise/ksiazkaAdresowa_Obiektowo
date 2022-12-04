@@ -15,25 +15,25 @@ using namespace std;
 class UzytkownikMenedzer {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
-    MetodyPomocnicze metodyPomocnicze;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
 
-
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
-    //void ustawIdZalogowanegoUzytkownika();
+
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     int wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
 
+    bool czyUzytkownikJestZalogowany();
     int pobierzIdZalogowanegoUzytkownika();
 };
 

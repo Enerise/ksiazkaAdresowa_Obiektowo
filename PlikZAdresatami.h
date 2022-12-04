@@ -14,10 +14,9 @@ using namespace std;
 
 class PlikZAdresatami{
 
-    MetodyPomocnicze metodyPomocnicze;
-    //PlikZAdresatami plikZAdresatami;
-    vector <Adresat> adresaci;
-     string nazwaPlikuZAdresatami;
+     const string NAZWA_PLIKU_Z_ADRESATAMI;
+     int idOstatniegoAdresata;
+
      int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
      int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
      Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
@@ -25,9 +24,12 @@ class PlikZAdresatami{
 
 
 public:
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci, int idZalogowanegoUzytkownika);
-    void dopiszAdresataDoPliku(Adresat adresat);
+    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
+        idOstatniegoAdresata = 0;
+    };
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    bool dopiszAdresataDoPliku(Adresat adresat);
+    int pobierzIdOstatniegoAdresata();
 };
 
 #endif
