@@ -14,7 +14,6 @@ public:
      static string wczytajLinie();
      static string pobierzLiczbe(string tekst, int pozycjaZnaku);
      static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-     static bool czyPlikJestPusty(fstream &plikTekstowy);
      static int konwersjaStringNaInt(string liczba);
      static int wczytajLiczbeCalkowita();
      static char wczytajZnak();

@@ -44,6 +44,58 @@ void KsiazkaAdresowa::dodajAdresata()
     }
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->usunAdresata();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
+void KsiazkaAdresowa::edytujAdresata()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->edytujAdresata();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->wyszukajAdresatowPoImieniu();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->wyszukajAdresatowPoNazwisku();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
@@ -76,11 +128,11 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
-   // cout << "2. Wyszukaj po imieniu" << endl;
-   // cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-   // cout << "5. Usun adresata" << endl;
-    //cout << "6. Edytuj adresata" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
     cout << "8. Wyloguj sie" << endl;
